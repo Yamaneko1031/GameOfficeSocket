@@ -1,0 +1,14 @@
+# runtime: nodejs12
+runtime: nodejs
+
+# フレキシブル環境出ないとsocket通信出来ないっぽい
+env: flex
+
+# インスタンス数はとりあえず1個
+manual_scaling:
+  instances: 1
+
+# 同じユーザーからのリクエストを同じインスタンスに送信できるようにするには、
+# session_affinityを有効にする必要があるらしい
+network:
+  session_affinity: true
